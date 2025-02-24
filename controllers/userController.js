@@ -84,11 +84,12 @@ export const getProfile = catchAsyncErrors(async (req, res, next) => {
 
 export const logout = catchAsyncErrors(async (req, res, next) => {
   res
-    .status(200)
+    // .status(200)
     .cookie("token", "", {
-      expires: new Date(Date.now()),
+      expires: new Date(0),
       httpOnly: true,
       sameSite: "None",
+      secure:true,
     })
     .json({
       success: true,
