@@ -27,7 +27,7 @@ app.use(express.static("dist"));
 // CORS configuration
 app.use(
   cors({
-    origin: "https://fe-auctionbidding.netlify.app", // Allowed origins
+    origin: "https://biddingplatform.netlify.app", // Allowed origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, 
