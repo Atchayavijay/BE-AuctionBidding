@@ -16,7 +16,6 @@ router.post(
   "/create",
   isAuthenticated,
   isAuthorized("Auctioneer"),
-  trackCommissionStatus,
   addNewAuctionItem
 );
 
