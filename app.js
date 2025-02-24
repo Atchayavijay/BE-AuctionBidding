@@ -27,22 +27,22 @@ app.use(express.static("dist"));
 // CORS configuration
 app.use(
   cors({
-    origin: "https://fe-auctionbidding.netlify.app/", // Allowed origins
+    origin: "https://fe-auctionbidding.netlify.app", // Allowed origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true, // Allow credentials (cookies)
+    credentials: true, 
   })
 );
 
 // Handle preflight requests
-app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin","https://fe-auctionbidding.netlify.app/" ); 
-  // Dynamically set the origin
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.status(204).end();
-});
+// app.options("*", (req, res) => {
+//   res.header("Access-Control-Allow-Origin","https://fe-auctionbidding.netlify.app" ); 
+//   // Dynamically set the origin
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   res.status(204).end();
+// });
 
 // Middleware for parsing cookies
 app.use(cookieParser());

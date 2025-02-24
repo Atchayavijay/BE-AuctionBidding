@@ -2,7 +2,6 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import ErrorHandler from "../middlewares/error.js";
 import { User } from "../models/userSchema.js";
 import { v2 as cloudinary } from "cloudinary";
-
 import { generateToken } from "../utils/jwtToken.js";
 
 export const register = catchAsyncErrors(async (req, res, next) => {
@@ -11,19 +10,16 @@ export const register = catchAsyncErrors(async (req, res, next) => {
   }
 
   const { profileImage } = req.files;
-
   const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
   if (!allowedFormats.includes(profileImage.mimetype)) {
     return next(new ErrorHandler("File format not supported.", 400));
   }
-
   const {
     userName,
     email,
     password,
     phone,
-    role,
-    
+    role,   
   } = req.body;
 
   if (!userName || !email || !phone || !password  || !role) {
