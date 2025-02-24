@@ -38,7 +38,7 @@ router.delete(
 );
 
 router.put(
-  "/item/republish/:id",
+  "/republish/:id",
   isAuthenticated,
   isAuthorized("Auctioneer"),
   republishItem

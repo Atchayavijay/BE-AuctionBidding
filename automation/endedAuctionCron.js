@@ -41,9 +41,9 @@ export const endedAuctionCron = () => {
          
           const subject = `Congratulations! You won the auction for ${auction.title}`;
           const message = `Dear ${bidder.userName}, \n\nCongratulations! You have won the auction ntac\n\n:\n\nWe are pleased to inform you that your bid has been higher value in the auction.So your bid was selected as the winning proposal,We have announced you are the winner of the auction.\n\n`;
-          console.log("SENDING EMAIL TO HIGHEST BIDDER");
+          // console.log("SENDING EMAIL TO HIGHEST BIDDER");
           sendEmail({ email: bidder.email, subject, message });
-          console.log("SUCCESSFULLY EMAIL SEND TO HIGHEST BIDDER");
+          // console.log("SUCCESSFULLY EMAIL SEND TO HIGHEST BIDDER");
         } else {
           await auction.save();
         }
