@@ -30,7 +30,7 @@ app.use(
     origin: "https://biddingplatform.netlify.app", // Allowed origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true, 
+    // credentials: true, 
   })
 );
 
